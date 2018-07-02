@@ -1,4 +1,4 @@
-# Geta homework
+
 # Fetching weather
 
 ### Getting Started
