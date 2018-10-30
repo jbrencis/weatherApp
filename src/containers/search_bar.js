@@ -13,16 +13,17 @@ class SearchBar extends Component {
 
   onFormSubmit = event => {
     event.preventDefault();
-
-    this.props.fetchWeather(this.state.city);
-    this.setState({ city: '' });
+    if (this.state.city !== '') {
+      this.props.fetchWeather(this.state.city);
+      this.setState({ city: '' });
+    }
   };
 
   render() {
     return (
       <form onSubmit={this.onFormSubmit} className="input-group">
         <input
-          placeholder="Get a five-day forecast in any Latvian city"
+          placeholder="Get a five-day forecast in any Swiss city (try 'Zurich' for example)"
           className="form-control"
           value={this.state.city}
           onChange={this.onInputChange}
